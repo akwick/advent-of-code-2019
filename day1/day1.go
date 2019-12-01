@@ -10,10 +10,13 @@ import (
 func CalculateSumFuel() {
 	masses := readFile("./day1/input-star1")
 	requiredFuel := 0
+	requiredFuelPart2 := 0
 	for _, mass := range masses {
 		requiredFuel += calculateRequiredFuel(mass)
+		requiredFuelPart2 += calculateRequiredFuelPartTwo(mass)
 	}
-	fmt.Printf("Requires %d fuel.\n", requiredFuel)
+	fmt.Printf("Part1 : Requires %d fuel.\n", requiredFuel)
+	fmt.Printf("Part2 : Requires %d fuel.\n", requiredFuelPart2)
 }
 
 func calculateRequiredFuel(mass int) int {
