@@ -20,6 +20,15 @@ func calculateRequiredFuel(mass int) int {
 	return (mass / 3) - 2
 }
 
+func calculateRequiredFuelPartTwo(mass int) int {
+	requiredFuel := 0
+	for calculateRequiredFuel(mass) > 0 {
+		mass = calculateRequiredFuel(mass)
+		requiredFuel += mass
+	}
+	return requiredFuel
+}
+
 func readFile(input string) []int {
 	file, err := os.Open(input)
 	if err != nil {
