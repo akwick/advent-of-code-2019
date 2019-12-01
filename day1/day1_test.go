@@ -24,3 +24,25 @@ func Test_calculateRequiredFuel(t *testing.T) {
 		})
 	}
 }
+
+func Test_calculateRequiredFuelPartTwo(t *testing.T) {
+	type args struct {
+		mass int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"Example1", args{12}, 2},
+		{"Example2", args{1969}, 966},
+		{"Example3", args{100756}, 50346},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := calculateRequiredFuelPartTwo(tt.args.mass); got != tt.want {
+				t.Errorf("calculateRequiredFuelPartTwo() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
